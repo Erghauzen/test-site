@@ -62,3 +62,23 @@ export const Button = styled.button<ButtonProps>`
   pointer-events: ${({ pointerEvents }) => pointerEvents || 'inherit'};
   margin-top: ${({ marginTop }) => marginTop || '0'};
 `;
+
+
+import React, { useState } from "react";
+
+function ConnectionStatus() {
+  const [status, setStatus] = useState("Not connected");
+
+  function handleConnect() {
+    setStatus("Connected");
+  }
+
+  return (
+    <div>
+      <button onClick={handleConnect}>Connect</button>
+      <p>{status}</p>
+    </div>
+  );
+}
+
+export default ConnectionStatus;
