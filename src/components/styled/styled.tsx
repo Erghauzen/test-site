@@ -23,64 +23,6 @@ export const FlexBoxCol = styled.div`
   gap: 10px;
 `;
 
-export const Button = styled.button`
-  background-color: ${(props) =>
-    props.disabled ? "#6e6e6e" : "var(--tg-theme-button-color)"};
-  border: 0;
-  border-radius: 8px;
-  padding: 10px 20px;
-  position: absolute;
-  top: 0;
-  right: 0;
-  color: var(--tg-theme-button-text-color);
-  font-weight: 700;
-  cursor: pointer;
-  pointer-events: ${(props) => (props.disabled ? "none" : "inherit")};
-
-  // Добавил стили для темной темы
-  &::placeholder {
-    color: #fefefe; /* Цвет placeholder в светлой теме */
-  }
-
-  &:-ms-input-placeholder {
-    color: #fefefe; /* Internet Explorer/Edge */
-  }
-
-  &::-ms-input-placeholder {
-    color: #fefefe; /* Microsoft Edge */
-  }
-
-  &[type="date"]::-webkit-calendar-picker-indicator {
-    color: #fefefe; /* Для типа input 'date' в WebKit браузерах */
-  }
-
-  &[type="date"]::-webkit-datetime-edit,
-  &[type="date"]::-webkit-datetime-edit-day-field,
-  &[type="date"]::-webkit-datetime-edit-month-field,
-  &[type="date"]::-webkit-datetime-edit-year-field {
-    color: #fefefe; /* Для типа input 'date' в WebKit браузерах */
-  }
-
-  &[type="time"]::-webkit-clear-button {
-    color: #fefefe; /* Для типа input 'time' в WebKit браузерах */
-  }
-
-  &[type="time"]::-webkit-inner-spin-button {
-    color: #fefefe; /* Для типа input 'time' в WebKit браузерах */
-  }
-
-  &[type="time"]::-webkit-calendar-picker-indicator {
-    color: #fefefe; /* Для типа input 'time' в WebKit браузерах */
-  }
-
-  &[type="datetime"];
-  &[type="datetime"]::-webkit-clear-button,
-  &[type="datetime"]::-webkit-inner-spin-button,
-  &[type="datetime"]::-webkit-calendar-picker-indicator {
-    color: #fefefe; /* Для типа input 'datetime' в WebKit браузерах */
-  }
-`;
-
 export const Ellipsis = styled.div`
   text-overflow: ellipsis;
   overflow: hidden;
