@@ -96,9 +96,4 @@ export const Input = styled("input")`
   &[type="datetime"]::-webkit-calendar-picker-indicator {
   color: #fefefe; /* Для типа input 'datetime' в WebKit браузерах */
   }
-  #tonConnectButton {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
   `;
