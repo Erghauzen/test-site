@@ -29,6 +29,7 @@ export const Button = styled.button`
   border: 0;
   border-radius: 8px;
   padding: 10px 20px;
+  position: 100; 
   color: var(--tg-theme-button-text-color);
   font-weight: 700;
   cursor: pointer;
