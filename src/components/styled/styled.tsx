@@ -50,50 +50,56 @@ export const Input = styled("input")`
   width: 100%;
   border: 1px solid #c2c2c2;
 
-  @media (prefers-color-scheme: dark) {
-    border: 1px solid #fefefe;
-  }
+@media (prefers-color-scheme: dark) {
+  border: 1px solid #fefefe;
+}
 
-  // Добавил стили для темной темы 
-  ::placeholder {
-    color: #fefefe; /* Цвет placeholder в светлой теме */
-  }
+// Добавил стили для темной темы 
+::placeholder {
+  color: #fefefe; /* Цвет placeholder в светлой теме */
+}
 
-  :-ms-input-placeholder {
-    color: #fefefe; /* Internet Explorer/Edge */
-  }
+:-ms-input-placeholder {
+  color: #fefefe; /* Internet Explorer/Edge */
+}
 
-  ::-ms-input-placeholder {
-    color: #fefefe; /* Microsoft Edge */
-  }
+::-ms-input-placeholder {
+  color: #fefefe; /* Microsoft Edge */
+}
 
-  &[type="date"]::-webkit-calendar-picker-indicator {
-    color: #fefefe; /* Для типа input 'date' в WebKit браузерах */
-  }
+&[type="date"]::-webkit-calendar-picker-indicator {
+  color: #fefefe; /* Для типа input 'date' в WebKit браузерах */
+}
 
-  &[type="date"]::-webkit-datetime-edit,
-  &[type="date"]::-webkit-datetime-edit-day-field,
-  &[type="date"]::-webkit-datetime-edit-month-field,
-  &[type="date"]::-webkit-datetime-edit-year-field {
-    color: #fefefe; /* Для типа input 'date' в WebKit браузерах */
-  }
+&[type="date"]::-webkit-datetime-edit,
+&[type="date"]::-webkit-datetime-edit-day-field,
+&[type="date"]::-webkit-datetime-edit-month-field,
+&[type="date"]::-webkit-datetime-edit-year-field {
+  color: #fefefe; /* Для типа input 'date' в WebKit браузерах */
+}
 
-  &[type="time"]::-webkit-clear-button {
-    color: #fefefe; /* Для типа input 'time' в WebKit браузерах */
-  }
+&[type="time"]::-webkit-clear-button {
+  color: #fefefe; /* Для типа input 'time' в WebKit браузерах */
+}
 
-  &[type="time"]::-webkit-inner-spin-button {
-    color: #fefefe; /* Для типа input 'time' в WebKit браузерах */
-  }
+&[type="time"]::-webkit-inner-spin-button {
+  color: #fefefe; /* Для типа input 'time' в WebKit браузерах */
+}
 
-  &[type="time"]::-webkit-calendar-picker-indicator {
-    color: #fefefe; /* Для типа input 'time' в WebKit браузерах */
-  }
+&[type="time"]::-webkit-calendar-picker-indicator {
+  color: #fefefe; /* Для типа input 'time' в WebKit браузерах */
+}
 
-  &[type="datetime"]; 
-  &[type="datetime"]::-webkit-clear-button,
-  &[type="datetime"]::-webkit-inner-spin-button,
-  &[type="datetime"]::-webkit-calendar-picker-indicator {
-  color: #fefefe; /* Для типа input 'datetime' в WebKit браузерах */
-  }
-  `;
+&[type="datetime"]; 
+&[type="datetime"]::-webkit-clear-button,
+&[type="datetime"]::-webkit-inner-spin-button,
+&[type="datetime"]::-webkit-calendar-picker-indicator {
+color: #fefefe; /* Для типа input 'datetime' в WebKit браузерах */
+}
+
+{TonConnectButton} {
+position: absolute;
+top: 0;
+right: 0;
+}
+`;
