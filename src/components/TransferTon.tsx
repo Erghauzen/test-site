@@ -9,43 +9,42 @@ export function TransferTon() {
   const { sender, connected } = useTonConnect();
 
   const [tonAmount, setTonAmount] = useState("0.01");
-  const [tonRecipient, setTonRecipient] = useState(
-    "in progress"
-  );
+  const [tonRecipient, setTonRecipient] = useState("in progress");
 
-  <Card>
-    <FlexBoxCol>
-      <h3>Transfer TON</h3>
-      <FlexBoxRow>
-        <label>Amount </label>
-        <Input
-          style={{ marginRight: 8 }}
-          type="number"
-          value={tonAmount}
-          onChange={(e) => setTonAmount(e.target.value)}
-        ></Input>
-      </FlexBoxRow>
-      <FlexBoxRow>
-        <label>To </label>
-        <Input
-          style={{ marginRight: 8 }}
-          value={tonRecipient}
-          onChange={(e) => setTonRecipient(e.target.value)}
-        ></Input>
-      </FlexBoxRow>
-      <Button
-        disabled={!connected}
-        style={{ marginTop: 18 }}
-        onClick={async () => {
-          sender.send({
-            to: Address.parse(tonRecipient),
-            value: toNano(tonAmount),
-          });
-        } }
-      >
-        Transfer
-      </Button>
-    </FlexBoxCol>
-  </Card>; 
-  ;
+  return (
+    <Card>
+      <FlexBoxCol>
+        <h3>Transfer TON</h3>
+        <FlexBoxRow>
+          <label>Amount </label>
+          <Input
+            style={{ marginRight: 8 }}
+            type="number"
+            value={tonAmount}
+            onChange={(e) => setTonAmount(e.target.value)}
+          ></Input>
+        </FlexBoxRow>
+        <FlexBoxRow>
+          <label>To </label>
+          <Input
+            style={{ marginRight: 8 }}
+            value={tonRecipient}
+            onChange={(e) => setTonRecipient(e.target.value)}
+          ></Input>
+        </FlexBoxRow>
+        <Button
+          disabled={!connected}
+          style={{ marginTop: 18 }}
+          onClick={async () => {
+            sender.send({
+              to: Address.parse(tonRecipient),
+              value: toNano(tonAmount),
+            });
+          }}
+        >
+          Transfer
+        </Button>
+      </FlexBoxCol>
+    </Card>
+  );
 }
