@@ -101,3 +101,4 @@ export const Input = styled("input")`
   top: 0;
   right: 0;
 }
+  `;
