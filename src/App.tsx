@@ -47,26 +47,26 @@ interface ButtonProps {
   pointerEvents?: string;
 }
 
- const Card = styled.div<CardProps>`
+export const Card = styled.div<CardProps>`
   padding: ${({ padding }) => padding || '18px 20px'};
   border-radius: ${({ borderRadius }) => borderRadius || '8px'};
   background-color: ${({ backgroundColor }) => backgroundColor || 'white'};
 `;
 
- const FlexBoxRow = styled.div<FlexBoxProps>`
+export const FlexBoxRow = styled.div<FlexBoxProps>`
   display: flex;
   flex-direction: ${({ flexDirection }) => flexDirection || 'row'};
   gap: ${({ gap }) => gap || '10px'};
   align-items: ${({ alignItems }) => alignItems || 'center'};
 `;
 
- const FlexBoxCol = styled.div<FlexBoxProps>`
+export const FlexBoxCol = styled.div<FlexBoxProps>`
   display: flex;
   flex-direction: ${({ flexDirection }) => flexDirection || 'column'};
   gap: ${({ gap }) => gap || '10px'};
 `;
 
- const Input = styled.input<InputProps>`
+export const Input = styled.input<InputProps>`
   padding: 10px 20px;
   border-radius: 10px;
   width: 100%;
@@ -74,7 +74,7 @@ interface ButtonProps {
   margin-right: ${({ marginRight }) => marginRight || '0'};
 `;
 
- const Button = styled.button<ButtonProps>`
+export const Button = styled.button<ButtonProps>`
   background-color: ${({ backgroundColor }) => backgroundColor || 'var(--tg-theme-button-color)'};
   border: 0;
   border-radius: 8px;
