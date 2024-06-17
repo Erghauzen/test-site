@@ -2,7 +2,6 @@ import "./App.css";
 import { TonConnectButton } from "@tonconnect/ui-react";
 import { TransferTon } from "./components/TransferTon";
 import styled from "styled-components";
-;
 import { useTonConnect } from "./hooks/useTonConnect";
 import { CHAIN } from "@tonconnect/protocol";
 import "@twa-dev/sdk";
@@ -23,32 +22,6 @@ const AppContainer = styled.div`
   max-width: 900px;
   margin: 0 auto;
 `;
-
-function App() {
-  const { network } = useTonConnect();
-
-  return (
-    <StyledApp>
-      <AppContainer>
-        <FlexBoxCol>
-          <FlexBoxRow>
-            <TonConnectButton />
-            {network? (
-              network === CHAIN.MAINNET? (
-                <span>mainnet</span>
-              ) : (
-                <span>testnet</span>
-              )
-            ) : (
-              <span>Not connected</span>
-            )}
-          </FlexBoxRow>
-          <TransferTon />
-        </FlexBoxCol>
-      </AppContainer>
-    </StyledApp>
-  );
-}
 
 interface CardProps {
   padding?: string;
@@ -130,6 +103,34 @@ function ConnectionStatus() {
     </div>
   );
 }
+
+function App() {
+  const { network } = useTonConnect();
+
+  return (
+    <StyledApp>
+      <AppContainer>
+        <FlexBoxCol>
+          <FlexBoxRow>
+            <TonConnectButton />
+            {network? (
+              network === CHAIN.MAINNET? (
+                <span>mainnet</span>
+              ) : (
+                <span>testnet</span>
+              )
+            ) : (
+              <span>Not connected</span>
+            )}
+          </FlexBoxRow>
+          <TransferTon />
+        </FlexBoxCol>
+      </AppContainer>
+    </StyledApp>
+  );
+}
+
+
 
 
 export default App;
