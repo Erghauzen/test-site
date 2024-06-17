@@ -134,7 +134,8 @@ export const NFTCollectionButton = () => {
       }}>
         «Your<br />
         NFT<br />
-        Collection»
+        Coll-<br />
+        ection»
       </span>
     </SquarePanelLeft>
   );
