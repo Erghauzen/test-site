@@ -81,4 +81,3 @@ function ConnectionStatus() {
   );
 }
 
-export default ConnectionStatus;
