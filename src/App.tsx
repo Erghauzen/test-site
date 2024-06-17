@@ -130,7 +130,7 @@ export const NFTCollectionButton = () => {
         fontFamily: 'VIVL Rail, sans-serif', // используем VIVL Rail, если он установлен, иначе sans-serif
         fontSize: "12px",
         fontWeight: "bold", // делаем шрифт жирным
-        paddingLeft: "40px" // добавляем отступ слева для значка
+        paddingLeft: "37px" // добавляем отступ слева для значка
       }}>
         «Your<br />
         NFT<br />
