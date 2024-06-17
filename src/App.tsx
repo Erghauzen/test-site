@@ -110,7 +110,7 @@ function App() {
                 <span>testnet</span>
               )
             ) : (
-              <span>Not connected</span>
+              <span></span>
             )}
           </FlexBoxRow>
           <TransferTon />
