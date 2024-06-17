@@ -47,26 +47,26 @@ interface ButtonProps {
   pointerEvents?: string;
 }
 
-export const Card = styled.div<CardProps>`
+ const Card = styled.div<CardProps>`
   padding: ${({ padding }) => padding || '18px 20px'};
   border-radius: ${({ borderRadius }) => borderRadius || '8px'};
   background-color: ${({ backgroundColor }) => backgroundColor || 'white'};
 `;
 
-export const FlexBoxRow = styled.div<FlexBoxProps>`
+ const FlexBoxRow = styled.div<FlexBoxProps>`
   display: flex;
   flex-direction: ${({ flexDirection }) => flexDirection || 'row'};
   gap: ${({ gap }) => gap || '10px'};
   align-items: ${({ alignItems }) => alignItems || 'center'};
 `;
 
-export const FlexBoxCol = styled.div<FlexBoxProps>`
+ const FlexBoxCol = styled.div<FlexBoxProps>`
   display: flex;
   flex-direction: ${({ flexDirection }) => flexDirection || 'column'};
   gap: ${({ gap }) => gap || '10px'};
 `;
 
-export const Input = styled.input<InputProps>`
+ const Input = styled.input<InputProps>`
   padding: 10px 20px;
   border-radius: 10px;
   width: 100%;
@@ -74,7 +74,7 @@ export const Input = styled.input<InputProps>`
   margin-right: ${({ marginRight }) => marginRight || '0'};
 `;
 
-export const Button = styled.button<ButtonProps>`
+ const Button = styled.button<ButtonProps>`
   background-color: ${({ backgroundColor }) => backgroundColor || 'var(--tg-theme-button-color)'};
   border: 0;
   border-radius: 8px;
@@ -86,23 +86,13 @@ export const Button = styled.button<ButtonProps>`
   margin-top: ${({ marginTop }) => marginTop || '0'};
 `;
 
-
-import React, { useState } from "react";
-
-function ConnectionStatus() {
-  const [status, setStatus] = useState("Not connected");
-
-  function handleConnect() {
-    setStatus("Connected");
-  }
-
-  return (
-    <div>
-      <button onClick={handleConnect}>Connect</button>
-      <p>{status}</p>
-    </div>
-  );
-}
+const SquarePanel = styled.div`
+  width: 100px;
+  height: 100px;
+  background-color: #ccc;
+  border-radius: 10px;
+  margin: 10px;
+`;
 
 function App() {
   const { network } = useTonConnect();
