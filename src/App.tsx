@@ -55,6 +55,7 @@ export const Card = styled.div<CardProps>`
 
 export const FlexBoxRow = styled.div<FlexBoxProps>`
   display: flex;
+  justify-content: flex-end;
   flex-direction: ${({ flexDirection }) => flexDirection || 'row'};
   gap: ${({ gap }) => gap || '10px'};
   align-items: ${({ alignItems }) => alignItems || 'center'};
@@ -86,13 +87,72 @@ export const Button = styled.button<ButtonProps>`
   margin-top: ${({ marginTop }) => marginTop || '0'};
 `;
 
-const SquarePanel = styled.div`
-  width: 100px;
-  height: 100px;
-  background-color: #ccc;
-  border-radius: 10px;
-  margin: 10px;
+// Размеры кнопок выражаются в процентах при помощи vw и vh
+export const SquarePanelLeft = styled.div` 
+  width: 30vw; 
+  height: 20vh;
+  background-color: #C0C0C0;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content:  space-between; 
+  padding-left: 60px;
+
+  @media (max-width: 100px) {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+  }
 `;
+
+export const SquarePanelRight = styled.div`
+  width: 30vw;
+  height: 20vh; 
+  background-color: #C0C0C0;
+  border-radius: 3px;
+  display: flex; 
+  align-items: center;
+  justify-content: center; 
+  padding-right: 80px; 
+
+  @media (max-width: 100px) {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+  }
+`;
+
+
+export const NFTCollectionButton = () => {
+  return (
+    <SquarePanelLeft>
+      <span style={{
+        fontFamily: 'VIVL Rail, sans-serif', // используем VIVL Rail, если он установлен, иначе sans-serif
+        fontSize: "12px",
+        fontWeight: "bold", // делаем шрифт жирным
+        paddingLeft: "40px" // добавляем отступ слева для значка
+      }}>
+        «Your<br />
+        NFT<br />
+        Collection»
+      </span>
+    </SquarePanelLeft>
+  );
+};
+
+export const NFTButton = () => {
+  return (
+    <SquarePanelRight>
+      <span style={{
+        fontFamily: 'VIVL Rail, sans-serif',
+        fontSize: "12px",
+        fontWeight: "bold"
+      }}>
+        «NFT's»
+      </span>
+    </SquarePanelRight>
+  );
+};
 
 function App() {
   const { network } = useTonConnect();
@@ -110,8 +170,12 @@ function App() {
                 <span>testnet</span>
               )
             ) : (
-              <span></span>
+              <TonConnectButton/>
             )}
+          </FlexBoxRow>
+          <FlexBoxRow>
+            <NFTCollectionButton />
+            <NFTButton />
           </FlexBoxRow>
           <TransferTon />
         </FlexBoxCol>
@@ -119,8 +183,5 @@ function App() {
     </StyledApp>
   );
 }
-
-
-
 
 export default App;
